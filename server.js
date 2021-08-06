@@ -10,11 +10,18 @@ const image = require('./controllers/image');
 
 const db = knex({
     client: 'pg',
+    // Localhost Connection
+    // connection: {
+    //     host: 'postgresql-pointy-77998',
+    //     user: 'Rohit',
+    //     password: 'root',
+    //     database: 'smart-brain'
+    // }
+
+    // Remote Connection
     connection: {
-        host: 'postgresql-pointy-77998',
-        user: 'Rohit',
-        password: 'root',
-        database: 'smart-brain'
+        host: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
