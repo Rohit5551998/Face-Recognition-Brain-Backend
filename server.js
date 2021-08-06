@@ -20,7 +20,7 @@ const db = knex({
 
     // Remote Connection
     connection: {
-        host: process.env.DATABASE_URL,
+        connectionString: process.env.DATABASE_URL,
         ssl: true
     }
 });
